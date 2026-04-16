@@ -5,7 +5,6 @@ const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
-  console.log(window.scrollY);
   if(window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--out');
   } else {
@@ -14,7 +13,6 @@ document.addEventListener('scroll', () => {
 });
 
 document.addEventListener('scroll', () => {
-  console.log(window.scrollY);
   if(window.scrollY > navbarHeight) {
     navbar.classList.add('logo--out');
   } else {
@@ -30,17 +28,12 @@ const homeHeight = home.getBoundingClientRect().height;
 const phone_box = document.querySelector('.phone_box');
 
 document.addEventListener('scroll', () => {
-  console.log(homeHeight);
   if(window.scrollY > homeHeight) {
     phone_box.classList.remove('invisible');
   } else {
     phone_box.classList.add('invisible');
   }
 });
-
-// phone_box.addEventListener('click', () => {
-//   scrollIntoView('#home');
-// });
 
 // click "contact me" button
 const popupLayer = document.querySelector('.popup__contact');
@@ -51,7 +44,6 @@ closeBtn.addEventListener('click', () => {
 });
 
 // Perspective animation
-
 const images = document.querySelectorAll('.fade__img');
 let currentIndex = 0;
 
@@ -102,13 +94,14 @@ function updateActive() {
   if (slideItems[targetIdx]) {
     slideItems[targetIdx].classList.add('active');
 
-  // 위치가 11번(가짜 1번)이라면, 진짜 6번(6)에도 active를 준다.
-  if (currSlide === totalCount - itemsToClone) {
-    slideItems[itemsToClone + 1].classList.add('active');
-    }
+    // 위치가 11번(가짜 1번)이라면, 진짜 6번(6)에도 active를 준다.
+    if (currSlide === totalCount - itemsToClone) {
+      slideItems[itemsToClone + 1].classList.add('active');
+      }
     //반대로 가짜 6번(0)이라면, 진짜 6번(6)에도 active를 준다.
     if (currSlide === 0) {
-      slideItems[totalCount = (itemsToClone * 2) + 1].classList.add('active');
+      slideItems[(itemsToClone * 2) + 1].classList.add('active');
+      console
     }
   }
 }
@@ -166,10 +159,6 @@ function stopAutoPlay() {
 
 // 시작할 때 자동 재생 활성화
 startAutoPlay();
-
-/* 버튼 이벤트 */
-// const nextBtn = document.querySelector('.nextBtn');
-// const preBtn = document.querySelector('.preBtn');
 
 // 수동으로 버튼을 누를 때는 자동 재생을 멈추었다가 다시 시작
 document.querySelector('.nextBtn').addEventListener('click', () => {
