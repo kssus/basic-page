@@ -144,7 +144,7 @@ let autoPlayInterval;
 
 function startAutoPlay() {
   stopAutoPlay();
-  // 5000ms(5초)마다 currSlide를 키우고 이동 함.
+  // 3000ms(3초)마다 currSlide를 키우고 이동 함.
   autoPlayInterval = setInterval(() => {
     if(!isAnimating) {
       currSlide++;
