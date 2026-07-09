@@ -27,13 +27,13 @@ const homeHeight = home.getBoundingClientRect().height;
 
 const phone_box = document.querySelector('.phone_box');
 
-document.addEventListener('scroll', () => {
-  if(window.scrollY > homeHeight) {
-    phone_box.classList.remove('invisible');
-  } else {
-    phone_box.classList.add('invisible');
-  }
-});
+// document.addEventListener('scroll', () => {
+//   if(window.scrollY > homeHeight) {
+//     phone_box.classList.remove('invisible');
+//   } else {
+//     phone_box.classList.add('invisible');
+//   }
+// });
 
 // click "contact me" button
 const popupLayer = document.querySelector('.popup__contact');
@@ -166,7 +166,7 @@ document.querySelector('.nextBtn').addEventListener('click', () => {
   stopAutoPlay();
   currSlide++;
   moveSlide();
-  startAutoPlay();
+  // startAutoPlay();
 });
 
 document.querySelector('.preBtn').addEventListener('click', () => {
@@ -174,11 +174,11 @@ document.querySelector('.preBtn').addEventListener('click', () => {
   stopAutoPlay();
   currSlide--;
   moveSlide();
-  startAutoPlay();
+  // startAutoPlay();
 })
 
 // 마우스를 슬라이더 위에 올리면 멈추고, 때면 다시 시작
-const unitPlan = document.querySelector('.unit__plan');
+const unitPlan = document.querySelector('.section__container.unit');
 unitPlan.addEventListener('mouseenter', stopAutoPlay);
 unitPlan.addEventListener('mouseleave', startAutoPlay);
 
